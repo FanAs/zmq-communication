@@ -1,5 +1,5 @@
-import {getSystemHost} from "getSystemHost"
-import {TRequestMessage, TResponseMessage, TSupportedProtocols} from "types"
+import {getSystemHost} from "./getSystemHost"
+import {TRequestMessage, TResponseMessage, TSupportedProtocols} from "./types"
 import { socket, Socket } from 'zeromq';
 import { EventEmitter } from 'events';
 
@@ -69,8 +69,6 @@ export default class CommunicationServer extends EventEmitter {
 			} catch (err) {
 				return this.onRequest(err);
 			}
-
-			messageObject['size'] = message.length;
 
 			const resultPromise = this.onRequest(undefined, messageObject);
 			if (!messageObject.responseWanted) {

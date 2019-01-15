@@ -1,7 +1,7 @@
-import ClosedError from "errors/ClosedError"
-import TimeoutError from "errors/TimeoutError"
-import {getSystemHost} from "getSystemHost"
-import {TParams, TRequestMessage, TResponseMessage, TSupportedProtocols} from "types"
+import ClosedError from './errors/ClosedError'
+import TimeoutError from "./errors/TimeoutError"
+import {getSystemHost} from "./getSystemHost"
+import {TParams, TRequestMessage, TResponseMessage, TSupportedProtocols} from "./types"
 import { socket, Socket } from 'zeromq';
 import { EventEmitter } from 'events';
 
@@ -228,8 +228,6 @@ export default class CommunicationClient extends EventEmitter {
 
 				return;
 			}
-
-			messageObject['size'] = message.length;
 
 			const possibleCallback = this.callbackStorage.get(messageObject.id);
 			if (possibleCallback == null) {

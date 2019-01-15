@@ -1,8 +1,9 @@
 {
   "name": "zmq-communication",
   "version": "0.0.1",
-  "main": "src/index.ts",
-  "author": "ATeam <ateam@livesport.eu>",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "author": "Artyom Suchkov <fanasew@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^10.12.18",
@@ -12,5 +13,18 @@
     "tslint": "^5.12.1",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "prepare": "tsc -p tsconfig.json --declaration",
+    "test": "NODE_ENV=test; jest --forceExit --detectOpenHandles test/"
+  },
+  "config": {
+    "unsafe-perm": true
+  },
+  "publishConfig": {
+    "registry": "https://npmjs.com"
+  },
+  "dependencies": {
+    "zeromq": "^5.1.0"
   }
 }
