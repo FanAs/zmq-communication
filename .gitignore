@@ -1,0 +1,29 @@
+# -- ide
+/.buildpath
+/.cache
+/.project
+/nbproject
+/.settings
+/.idea
+
+# -- runtime
+/build
+/compiled
+/dist
+
+# -- other
+/npm-debug.log
+package-lock.json
+node_modules
+coverage
+dist
+/lib
+
+# -- macOS
+*.DS_Store
+
+yarn-error.log
+
+# symlinks for config overrides
+.env
+
